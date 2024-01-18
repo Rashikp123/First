@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    internal class Ra
+    {
+
+        int[] array1;
+        int x;
+
+        public void GetDetails()
+        {
+            Console.WriteLine("Enter array size");
+            x = Convert.ToInt32(Console.ReadLine());
+            array1 = new int[x];
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                Console.WriteLine($"Enter {i + 1} value ");
+                array1[i] = Convert.ToInt32(Console.ReadLine());
+               
+
+            }
+        }
+
+        public void Display()
+        {
+            Console.WriteLine(" ");
+            Array.Sort(array1);
+            Console.WriteLine("max is {0}", array1[array1.Length-1]);
+            Console.WriteLine("min is {0}", array1[0]);
+        }
+    }
+}
+    
+
+
+   
+

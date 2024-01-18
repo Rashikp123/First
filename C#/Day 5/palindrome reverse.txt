@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    internal class palindrome
+    {
+        
+            string sentance;
+
+            public void Get()
+            {
+                Console.WriteLine("enter a sentance: ");
+                sentance = Console.ReadLine();
+            }
+
+            public void Display()
+            {
+                int c = 0;
+                string[] words = sentance.Split(' ');
+                foreach (var word in words)
+                //for(int z=0; z<words.Length; z++)
+                {
+                    for (int i = 0, j = word.Length - 1; i < word.Length / 2; i++, j--)
+                    {
+                        if (word[i] == word[j])
+                        {
+                            c++;
+                        }
+                    }
+                    if (c != word.Length / 2)
+                    {
+                        Console.Write($"{word} ");
+                        c = 0;
+                    char[] chars = word.ToCharArray();
+                    Array.Reverse( chars );
+                    Console.WriteLine(chars);
+                }
+                    else
+                        c = 0;
+                }
+                
+            }
+        }
+    }
+

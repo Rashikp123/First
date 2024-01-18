@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+    internal class Table
+    {
+        int num1;
+        int num2;
+
+        public void GetDetails()
+        {
+            Console.WriteLine("enter first number:");
+            num1=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter second number:");
+            num2=Convert.ToInt32(Console.ReadLine());
+        }
+        public void Display()
+        {
+            for (int i = 1;  i< num2 ;i++) 
+            {
+                Console.WriteLine($"{num1}*{i}={num1 * i}");
+               
+            }
+            
+            
+        }
+    }
+}

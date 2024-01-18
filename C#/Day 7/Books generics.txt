@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    internal class Book
+    {
+        public int BookId { get; set; }
+        public float BookPrice { get; set; }    
+        public string BookTitle { get; set; }
+        public string BookPublisher { get; set; }
+
+    }
+}
+
+
+
+
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    internal class BookRepository
+    {
+        public List<Book> books {  get; set; }
+        public void Display()
+        {
+            foreach (Book b in books)
+            {
+                Console.WriteLine($"{b.BookId}{b.BookPrice}{b.BookTitle}{b.BookPublisher}");
+            }
+        }
+        public void DisplayPublisher(string publisher)
+        {
+            foreach (Book b in books)
+            {
+                if (b.BookPublisher == publisher) 
+                {
+                    Console.WriteLine($"{b.BookId}{b.BookPrice}{b.BookTitle}{b.BookPublisher}");
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// See https://aka.ms/new-console-template for more information
+using ConsoleApp9;
+
+Console.WriteLine("Hello, World!");
+List<Book> books = new List<Book>
+{
+    new Book() { BookId = 1 , BookTitle = "sucessful life", BookPrice = 14, BookPublisher = "Rashi" },
+    new Book() { BookId = 2, BookTitle = "sucessful journey", BookPrice = 28, BookPublisher = "Viuth" },
+    new Book() { BookId = 3, BookTitle = "sucessful me", BookPrice = 16, BookPublisher = "Ramya" },
+    new Book() { BookId = 4, BookTitle = "sucessful travel", BookPrice = 18, BookPublisher = "Hruthik" },
+};
+BookRepository bookRepository = new BookRepository();
+bookRepository.books = books;
+bookRepository.Display();
+bookRepository.DisplayPublisher("Rashi");
+

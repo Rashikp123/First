@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+internal class Class2
+{
+    int a,b;
+    public void Compare()
+    {
+        Console.WriteLine("enter first number:");
+         a= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("enter second number:");
+        b = Convert.ToInt32(Console.ReadLine());
+
+    }
+    public void Addition()
+    {
+        a=a+b;
+        Console.WriteLine("the addition is {0} " , a);
+    }
+    public void Substraction()
+    {
+        a = a - b;
+        Console.WriteLine("the substraction is {0} ", a);
+    }
+    public void Multiplication()
+    {
+        a = a * b;
+        Console.WriteLine("the multiplication is {0} ", a);
+    }
+    public void division()
+    {
+        a = a / b;
+        Console.WriteLine("the division is {0} ", a);
+    }
+}

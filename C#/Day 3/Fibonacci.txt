@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    
+    
+        internal class Fibonacci
+        {
+            int a = 0, b = 1;
+            int sum = 0, n;
+            public void Fib()
+            {
+                Console.WriteLine("Enter n:");
+                n = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"{0}\n{1}");
+                while (sum <= n - 3)
+                {
+                    sum = a + b;
+                    Console.WriteLine($"{sum} ");
+                    a = b;
+                    b = sum;
+                }
+
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fibonacci d = new Fibonacci();
+d.Fib();

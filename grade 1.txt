@@ -1,0 +1,58 @@
+
+    internal class Grade
+    {
+        int a, b, c, d, e;
+        float Total;
+        public void GetValue()
+        {
+            Console.WriteLine("enter marks of first subject:");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter marks of second subject:");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter marks of three subject:");
+            c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter marks of four subject:");
+            d = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter marks of five subject:");
+            e = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void Average()
+        {
+            Total = (a + b + c + d + e) / 5;
+
+            Console.WriteLine("Average is:{0}", Total);
+        }
+        public void Display()
+        {
+
+            if (Total >= 80 && Total <= 100)
+            {
+                Console.WriteLine("First");
+            }
+            if (Total >= 50 && Total < 80)
+            {
+                Console.WriteLine("second");
+            }
+            if (Total >= 30 && Total < 50)
+            {
+                Console.WriteLine("Third");
+
+            }
+            if (Total >= 0 && Total < 30)
+            {
+                Console.WriteLine("fail");
+            }
+            else
+            {
+                Console.WriteLine("Invalid marks");
+            }
+        }
+    }
+}
+       
+        
+
+    
+
+

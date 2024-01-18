@@ -1,0 +1,112 @@
+a class with an abstract metod is abstract class
+
+
+A method without body is abstract method(ends with semicolon)
+abstract classes cannot be initiated,they are only for inheritance
+child class should implement abstract method
+
+
+abstract class Demo
+{
+public abstarct void SayHello();
+public void Display()
+{
+statement;
+}
+
+
+public class child:Demo
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    abstract internal class Parent
+    {
+        public abstract void SayHello();
+
+    }
+
+}
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    internal class Clhild1:Parent
+    {
+        public override void SayHello()
+        {
+            Console.WriteLine("SayHello of child one");
+
+        }
+    }
+}
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    internal class Child2:Parent
+    {
+        public override void SayHello()
+        {
+            Console.WriteLine("SayHello of child Two");
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// See https://aka.ms/new-console-template for more information
+using ConsoleApp10;
+
+Console.WriteLine("Hello, World!");
+int choice;
+Console.WriteLine("1.Child1 SayHello");
+Console.WriteLine("2.Child2 SayHello");
+Console.WriteLine("Select an option");
+choice = Convert.ToInt32(Console.ReadLine());
+Parent obj = null;
+switch (choice)
+{
+    case 1:
+        obj = new Clhild1();
+        obj.SayHello();
+        break;
+    case 2:
+        obj = new Child2();
+        obj.SayHello();
+        break;
+    default:
+        Console.WriteLine("Invalid choice");
+        break;
+}
+

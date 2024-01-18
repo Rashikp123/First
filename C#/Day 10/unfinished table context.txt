@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    internal class Rashi
+    {
+       DataClasses1DataContext db;
+
+        public Rashi()
+        {
+            db = new DataClasses1DataContext();
+        }
+
+        public void GetAllStudent()
+        {
+            List<Emp> stds = db.Emps.ToList();
+
+            foreach (Emp e in stds)
+            {
+                Console.WriteLine($"Id : {e.Id} Name : {e.NAME} Designation : {e.DESIGNATION}");
+            }
+        }
+
+        public void GetStudentById()
+        {
+            Console.WriteLine("enter Id");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Emp std = (from a in db.Emps
+                           where a.Id == id
+                           select a).Single();
+
+
+            //Student std1 = db.Students.FirstOrDefault(s => s.Id == id);
+            //Student st2 = db.Students.Where(s => s.Id == id).FirstOrDefault();
+
+            Console.WriteLine($"Id : {std.Id} Name : {std.NAME} DESIGNATION : {std.DESIGNATION}");
+
+        }
+
+        public void AddNewStudent()
+        {
+            Console.WriteLine("Enter id");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter Name");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter Designation");
+            string Designation = Console.ReadLine();
+
+            Emp newEmp = new Emp() { Id = id, NAME = name, DESIGNATION = Designation };
+
+            db.Emps.InsertOnSubmit(newEmp);
+            db.SubmitChanges();
+
+
+
+
+        }
+
+
+        public void UpdateMarks()
+        {
+            Console.WriteLine("Enter id");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Student std = (from a in db.Students
+                           where a.Id == id
+                           select a).Single();
+
+            if (std != null)
+            {
+                Console.WriteLine("Enter updated Marks");
+                std.Marks = Convert.ToInt32(Console.ReadLine());
+                db.SubmitChanges();
+
+                Console.WriteLine("Updated Marks");
+            }
+            else
+            {
+                Console.WriteLine("No student with id exists");
+            }
+
+
+        }
+
+        public void DeleteStudent()
+        {
+
+            Console.WriteLine("Enter id");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Student std = (from a in db.Students
+                           where a.Id == id
+                           select a).Single();
+
+            if (std != null)
+            {
+                db.Students.DeleteOnSubmit(std);
+                db.SubmitChanges();
+                Console.WriteLine("Student deleted sucessfully");
+            }
+            else
+            {
+                Console.WriteLine("No student with id exists");
+            }
+        }
+
+    }
+}
+

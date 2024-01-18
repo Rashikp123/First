@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp8
+{
+    internal class Proa
+    {
+     
+            public int pid{get; set; }
+            public string pname{ get; set; }
+            public float price{ get; set; }
+            public string category{ get; set; }
+
+            
+        }
+    }
+
+
+
+
+
+
+
+using System;
+
+namespace ConsoleApp8
+{
+
+    class ProductRepository
+    {
+        public Pro[] array;
+        public ProductRepository(Pro[] array)
+        {
+            this.array = array;
+        }
+
+        public void Display()
+        {
+            foreach (Pro i in array)
+            {
+                Console.WriteLine(i.pname);
+            }
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// See https://aka.ms/new-console-template for more information
+using System.Net.Http.Headers;
+using ConsoleApp8;
+
+Console.WriteLine("Hello, World!");
+
+Pro[] c = new Pro[] {
+    new Pro(){pid=1,pname="chocolate",price=20,category="britania"},
+    new Pro(){pid=2,pname="chocolate",price=20,category="britania"},
+    new Pro(){pid=3,pname="chocolate",price=20,category="britania"}
+
+};
+
+ProductRepository Obj=new ProductRepository(c);
+Obj.Display();
+
+
+

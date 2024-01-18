@@ -1,0 +1,35 @@
+using System;
+class Square{
+    float a,b,c,d,e,f;
+
+      public void Val()
+      {
+    Console.WriteLine("enter two numbers");
+    a=Convert.ToInt32(Console.ReadLine());
+    b=Convert.ToInt32(Console.ReadLine());
+    
+      }
+ public void Ans()
+{
+    c=a+b;
+    Console.WriteLine("sum is {0}", c);
+    d=a-b;
+    Console.WriteLine("difference is {0}", d);
+    e=a*b;
+    Console.WriteLine("multiplication is {0}", e);
+    f=a/b;
+    Console.WriteLine("division is {0}", f);
+    
+}
+
+class Rashi
+{
+
+  static void Main(string[]args)
+   {
+    Square S1=new Square();
+    S1.Val();
+    S1.Ans();
+    }
+}
+}

@@ -1,0 +1,110 @@
+1. Which of the following is the correct declaration of an array
+int[] arr = new int[]; xx(either give size or data)
+int arr[] = new arr[];  xxxx
+int[] arr=new int[5];
+int[] arr = new int[]{1,2,3,4,5};
+int[] arr = new int[5]{1,2,3,4,5};
+int[] arr = {1,2,3,4,5}
+ 
+2. What does ToCharArray() do?
+ans:change a string into char array
+divide the string and convert string into character array
+
+3. What is Split() method do
+ans:splits the string into substrings
+
+4. What are the parameters of Split method
+ans:'  '
+
+5. How to convert any datatype to string
+ans:ToString();
+
+6. What is Array in C#
+ans:collection of homogenous method
+its a built in class
+provides lot of readymade methods
+can used with array of any data types
+
+7. What does Reverse() do in an Array give Syntax
+ans:Array.Reverse(name of the array)
+
+8. What does Split() do in an Array give Syntax
+ans:split the array with respect to parameter;;;;Array.split('')
+
+9. What does Min() and Max() do in Array
+ans:give maximum and minimum in an array
+
+10. How to create an array of Objects of class Student
+ans:student[] stud=new student[]
+{
+   new student1(){1,2,3,4}
+new student2(){1,2,3,4}
+};
+
+11. Write a Syntax to dispaly values from a string array whose names starts with S and Length greater than 5
+ans:foreach(var ch in sentence)
+{
+   if((ch[0]=='s'||ch[0]=='s')&&ch.Length>5
+{
+Console.WriteLine(ch);
+}
+}
+
+ans:Foreach(string s in array)
+{
+if(a.StartsWith("S") || a.StartsWith("s")) && a.Length > 5))
+      {console.writeline($”s”);}
+}
+
+
+12. Write a Syntax to display all Employees from Employees array whose Designation is Manager
+ans:foreach (Employee e in employees)
+           {
+              if(e.Dedesignation.Equals("desig"))
+               Console.WriteLine($"{e.EmpName} );
+          }
+
+
+13. Syntax to count for a particular alphabet in a sentence
+char[]ch=sentence.ToCharArray();
+foreach(vr x in ch)
+{
+   if (c==alphabet)
+   {
+     count++;
+   }
+}
+console.riteLine(count);
+
+14. Draw back of an array
+ans:can store only homogenous datatypes
+    fixed storage
+
+15. What are Collections and why
+ans:array which can store any type of data
+    increase/decrease array size without loosing data
+    it is builtin namespace
+
+16. Types of Collections
+ans:which work with index,
+    which work with value pair,
+    which work with LIFO,
+    which work with FIFO,
+    which work with index and key value.
+    
+17. ArrayList is a Collection class which works with __________-
+ans: Index.
+
+**18. Which method is used to add values to a ArrayList
+ans:.Add(); 
+
+19. What is auto implemented collection give syntax
+ans:ArrayList arr=new ArrayList(){L,"hello",45.2f};
+
+20. give syntax to display values from ArrayList using forloop
+ans:for(int i=0;i<array.Count;i++)
+{
+   Console.writeLine($"{array[i]}");
+
+21. give syntax to display values from ArrayList using foreach
+ans:foreach(var a in array)

@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    internal class For
+    {
+        string name;
+        int num;
+        public void Typ()
+        {
+            Console.WriteLine("enter a name:");
+            name = Console.ReadLine();
+            Console.WriteLine("enter a number");
+            num = Convert.ToInt32(Console.ReadLine());
+        }
+        public void Hello()
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                Console.WriteLine($"{i} ,{name}");
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+For d = new For();
+d.Typ();
+d.Hello();

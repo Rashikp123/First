@@ -1,0 +1,193 @@
+IShape creation:::::
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    internal interface IShape
+    {
+        void GetDetails();
+        void CalculateArea();
+
+        void DisplayDetails();
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    internal class Circle:IShape
+    {
+        float radius;
+        const float pie = 3.14f;
+        float area;
+        public void CalculateArea()
+        {
+            area = pie * radius * radius;
+        }
+
+        public void DisplayDetails()
+        {
+            Console.WriteLine($"Area of a circle is {area}");
+        }
+
+        public void GetDetails()
+        {
+            Console.WriteLine("Enter radius");
+            radius = Convert.ToSingle(Console.ReadLine());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    internal class Rectangle:IShape
+    {
+        float l, b, area;
+        public void CalculateArea()
+        {
+            Console.WriteLine("Enter Length");
+            l = Convert.ToSingle(Console.ReadLine());
+            Console.WriteLine("Enter breadth");
+            b = Convert.ToSingle(Console.ReadLine());
+        }
+
+        public void DisplayDetails()
+        {
+            Console.WriteLine($"Area of Rectangel {area}");
+        }
+
+        public void GetDetails()
+        {
+            area = l * b;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    internal class Square:IShape
+    {
+        float side;
+        float area;
+        public void CalculateArea()
+        {
+            area = side * side;
+        }
+
+        public void DisplayDetails()
+        {
+            Console.WriteLine($"Area of square : {area}");
+        }
+
+        public void GetDetails()
+        {
+            Console.WriteLine("Enter side");
+            side = Convert.ToSingle(Console.ReadLine());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// See https://aka.ms/new-console-template for more information
+using ConsoleApp10;
+
+Console.WriteLine("Hello, World!");
+int choice;
+Console.WriteLine("1.Area of Circle");
+Console.WriteLine("2.Area of Rectangle");
+Console.WriteLine("1.Area of Square");
+Console.WriteLine("Select an option");
+choice = Convert.ToInt32(Console.ReadLine());
+
+IShape sh;
+switch(choice)
+{
+    case 1:
+        sh = new Circle();
+        sh.GetDetails();
+        sh.CalculateArea();
+        sh.DisplayDetails();
+        break;
+    case 2:
+        sh = new Rectangle();
+        sh.GetDetails();
+        sh.CalculateArea();
+        sh.DisplayDetails();
+        break;
+    case 3:
+        sh = new Square();
+        sh.GetDetails();
+        sh.CalculateArea();
+        sh.DisplayDetails();
+        break;
+    default:
+        Console.WriteLine("Invalid choice");
+        break;
+    }
+
+
+    

@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    internal class Demo4
+    {
+        static int R;
+        static string Name;
+        static string university;
+
+            public static void MyStaticFunction()
+            {
+                Console.WriteLine("enter register number:");
+                 R= Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter student name:");
+            Name=Console.ReadLine();
+
+        }
+
+             static Demo4()
+            {
+            university = "ABC university";
+            }
+        public static void Display()
+        {
+            Console.WriteLine($"Register number: {R} ,Student name: {Name} ,university: {university}");
+        }
+        }
+    }
+

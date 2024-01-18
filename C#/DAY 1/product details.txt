@@ -1,0 +1,46 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+class ProductDet
+{
+    int prodid,price,units,amt;
+    string prodname;
+    
+    public void ReadValue()
+    {
+        Console.WriteLine("Enter Product id:");
+        prodid=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter Product Name:");
+        prodname=Console.ReadLine();
+        Console.WriteLine("Enter Price:");
+        price=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter Units:");
+        units=Convert.ToInt32(Console.ReadLine());
+    }
+    
+    public void Compute()
+    {
+        Console.WriteLine("Product ID is {0}",empid);
+        Console.WriteLine("Product Name is {0}",prodname);
+        Console.WriteLine("Price is {0}",price);
+        Console.WriteLine("Unit is {0}",units);
+        amt=units*price;
+        Console.WriteLine("Total Amount ia {0}",amt);
+    }
+}
+
+public class Prod
+{
+    public static void Main(string[] args)
+    {
+        Product p1=new Product();
+        p1.ReadValue();
+        p1.Compute();
+    }
+}
+
+
+
+
